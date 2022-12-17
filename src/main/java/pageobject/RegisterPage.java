@@ -1,5 +1,7 @@
 package pageobject;
 
+import entities.User;
+import helpers.UserHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
@@ -10,7 +12,7 @@ import static helpers.SeleniumHelper.*;
 
 public class RegisterPage {
 
-    static final String registerUrl = "https://stellarburgers.nomoreparties.site/register";
+    static final String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
 
     static final By buttonRegister = By.xpath(".//button[text() = 'Зарегистрироваться']");
     static final By inputFieldName = By.xpath(".//label[text() = 'Имя']/following-sibling::input");
@@ -18,9 +20,9 @@ public class RegisterPage {
     static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
     static final By messageIncorrectPassword = By.xpath(".//p[text() = 'Некорректный пароль']");
 
-    @Step("Открываем страницу регистрации и ")
+    @Step("Открываем страницу регистрации")
     public RegisterPage openRegisterPage() {
-        openPage(registerUrl);
+        openPage(registerPageUrl);
         return this;
     }
 
@@ -32,9 +34,10 @@ public class RegisterPage {
 
     @Step("Заполняем поля для регистрации нового пользователя")
     public RegisterPage fillRegisterForm() {
-        sendKeysToInputField(randomName(), inputFieldName);
-        sendKeysToInputField(randomEmail(), inputFieldEmail);
-        sendKeysToInputField(randomPassword(), inputFieldPassword);
+        User user = new UserHelper().getRandomUser();
+        sendKeysToInputField(user.getName(), inputFieldName);
+        sendKeysToInputField(user.getEmail(), inputFieldEmail);
+        sendKeysToInputField(user.getPassword(), inputFieldPassword);
         return this;
     }
 
