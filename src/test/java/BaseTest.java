@@ -1,6 +1,6 @@
+import drivermanager.DriverManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import drivermanager.DriverManager;
 
 public abstract class BaseTest {
 
@@ -10,7 +10,7 @@ public abstract class BaseTest {
      */
     @BeforeClass
     public static void initChromeDriver() {
-        DriverManager.setDriver("yandex");
+        DriverManager.setDriver("chrome");
         DriverManager.setDriverWait();
     }
 
