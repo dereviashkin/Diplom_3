@@ -22,8 +22,10 @@ public class DriverManager {
         switch (browserName) {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", driverPath.getAbsolutePath() + "\\src\\main\\resources\\webdrivers\\chromedriver.exe");
+                break;
             case "yandex":
                 System.setProperty("webdriver.chrome.driver", driverPath.getAbsolutePath() + "\\src\\main\\resources\\webdrivers\\yandexdriver.exe");
+                break;
         }
         driver = new ChromeDriver(chromeOptions);
         return driver;
