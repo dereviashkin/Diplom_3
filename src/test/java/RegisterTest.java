@@ -3,7 +3,7 @@ import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.RegisterPage;
 
-public class RegisterPageTest extends BaseTest {
+public class RegisterTest extends BaseTest {
 
     RegisterPage registerPage = new RegisterPage();
     LoginPage loginPage = new LoginPage();
