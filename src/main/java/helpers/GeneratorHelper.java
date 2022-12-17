@@ -19,6 +19,11 @@ public class GeneratorHelper {
         return randomString(8);
     }
 
+    @Step("Генерируем пароль длиной 5 знаков")
+    public static String randomPasswordShort() {
+        return randomString(5);
+    }
+
     @Step("Генерируем имя пользователя")
     public static String randomName() {
         name = new Faker().name().firstName();
