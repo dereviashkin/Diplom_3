@@ -15,7 +15,7 @@ public class DriverManager {
     /**
      * Инициализация Вебдрайвера в зависимости от переданного имени браузера
      */
-    private static WebDriver init(String browserName) {
+    private static void init(String browserName) {
         File driverPath = new File("");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
@@ -28,7 +28,6 @@ public class DriverManager {
                 break;
         }
         driver = new ChromeDriver(chromeOptions);
-        return driver;
     }
 
     /**
