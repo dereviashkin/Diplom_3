@@ -9,18 +9,19 @@ public class RegisterTest extends BaseTest {
     LoginPage loginPage = new LoginPage();
 
     @Test
-    @Description("Положительный тест регистрации нового пользователя")
+    @Description("Позитивный тест регистрации нового пользователя")
     public void registerNewUserCorrectSuccess() {
         registerPage
                 .openRegisterPage()
                 .fillRegisterForm()
                 .clickRegisterButton();
-        loginPage.waitForRegistrationIsSuccess();
+        loginPage
+                .waitForLoginButtonIsVisible();
     }
 
     @Test
     @Description("Негативный тест регистрации нового пользователя, пароль слишком короткий")
-    public void registerNewUserShortPassFail() {
+    public void registerNewUserShortPasswordFail() {
         registerPage
                 .openRegisterPage()
                 .fillRegisterFormShortPass()
