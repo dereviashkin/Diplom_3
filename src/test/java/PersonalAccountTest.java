@@ -26,7 +26,9 @@ public class PersonalAccountTest extends BaseTest {
         mainPage
                 .clickPersonalAccountButton();
         personalAccountPage
-                .waitForLogoutButtonIsVisible();
+                .waitForLogoutButtonIsVisible()
+                .clickLogoutButton();
+        mainPage.sleepLittle();
     }
 
     @Test
@@ -48,6 +50,7 @@ public class PersonalAccountTest extends BaseTest {
                 .clickLogoutButton();
         loginPage
                 .waitForLoginButtonIsVisible();
+        mainPage.sleepLittle();
     }
 
     @Test
@@ -67,7 +70,12 @@ public class PersonalAccountTest extends BaseTest {
                 .waitForLogoutButtonIsVisible();
         mainPage
                 .clickConstructorButton()
-                .waitAssembleBurgerToBeVisible();
+                .waitAssembleBurgerToBeVisible()
+                .clickPersonalAccountButton();
+        personalAccountPage
+                .waitForLogoutButtonIsVisible()
+                .clickLogoutButton();
+        mainPage.sleepLittle();
     }
 
     @Test
@@ -87,6 +95,11 @@ public class PersonalAccountTest extends BaseTest {
                 .waitForLogoutButtonIsVisible();
         mainPage
                 .clickStellarBurgersButton()
-                .waitAssembleBurgerToBeVisible();
+                .waitAssembleBurgerToBeVisible()
+                .clickPersonalAccountButton();
+        personalAccountPage
+                .waitForLogoutButtonIsVisible()
+                .clickLogoutButton();
+        mainPage.sleepLittle();
     }
 }
