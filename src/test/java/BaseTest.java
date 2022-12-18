@@ -19,6 +19,6 @@ public abstract class BaseTest {
      */
     @AfterClass
     public static void quitBrowser() {
-        DriverManager.quitDriver();
+//        DriverManager.quitDriver();
     }
 }
