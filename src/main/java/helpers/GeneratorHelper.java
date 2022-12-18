@@ -9,7 +9,6 @@ public class GeneratorHelper {
 
     private static String name;
 
-    @Step("Генерируем строку с помощью UUID указанной длины")
     public static String randomString(int length) {
         return UUID.randomUUID().toString().replace("-", "").substring(0, length);
     }
