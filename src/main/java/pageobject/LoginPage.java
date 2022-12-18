@@ -4,8 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static helpers.ChecksHelper.waitForElementToBeVisible;
-import static helpers.SeleniumHelper.clickButton;
-import static helpers.SeleniumHelper.sendKeysToInputField;
+import static helpers.SeleniumHelper.*;
 import static helpers.UserHelper.getCurrentEmail;
 import static helpers.UserHelper.getCurrentPassword;
 
@@ -20,6 +19,12 @@ public class LoginPage {
     @Step("Ждем, что видна кнопка \"Войти\"")
     public LoginPage waitForLoginButtonIsVisible() {
         waitForElementToBeVisible(loginButton);
+        return this;
+    }
+
+    @Step("Открываем страницу логина")
+    public LoginPage openLoginPage() {
+        openPage(loginPageUrl);
         return this;
     }
 

@@ -48,10 +48,9 @@ public class LoginTest extends BaseTest {
         registerPage
                 .openRegisterPage()
                 .fillRegisterForm()
-                .clickRegisterButton()
-                .clickRegisterButton()
                 .clickRegisterButton();
         loginPage
+                .openLoginPage()
                 .waitForLoginButtonIsVisible()
                 .loginWithCreatedAccount()
                 .clickLoginButton();
