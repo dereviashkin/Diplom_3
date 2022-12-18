@@ -18,7 +18,7 @@ public class LoginPage {
     static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
 
     @Step("Ждем, что видна кнопка \"Войти\"")
-    public LoginPage waitForRegistrationIsSuccess() {
+    public LoginPage waitForLoginButtonIsVisible() {
         waitForElementToBeVisible(loginButton);
         return this;
     }

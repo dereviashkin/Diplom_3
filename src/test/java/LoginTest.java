@@ -3,12 +3,14 @@ import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.RegisterPage;
+import pageobject.ResetPasswordPage;
 
 public class LoginTest extends BaseTest {
 
     MainPage mainPage = new MainPage();
     RegisterPage registerPage = new RegisterPage();
     LoginPage loginPage = new LoginPage();
+    ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
     @Test
     @Description("Позитивный тест логина с главной страницы через кнопку \"Войти в аккаунт\"")
@@ -19,7 +21,7 @@ public class LoginTest extends BaseTest {
                 .clickRegisterButton();
         mainPage
                 .openMainPage()
-                .clickLoginButton();
+                .clickLoginToAccountButton();
         loginPage
                 .loginWithCreatedAccount()
                 .clickLoginButton();
@@ -27,15 +29,46 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Description("Позитивный тест логина с главной страницы через кнопку \"Личный кабинет\"")
-    public void loginMainPagePersonalAccButtonSuccess() {
+    public void loginMainPagePersonalAccountButtonSuccess() {
         registerPage
                 .openRegisterPage()
                 .fillRegisterForm()
                 .clickRegisterButton();
         mainPage
                 .openMainPage()
-                .clickPersonalAccButton();
+                .clickPersonalAccountButton();
         loginPage
+                .loginWithCreatedAccount()
+                .clickLoginButton();
+    }
+
+    @Test
+    @Description("Позитивный тест логина после регистрации")
+    public void loginRegisterCorrectSuccess() {
+        registerPage
+                .openRegisterPage()
+                .fillRegisterForm()
+                .clickRegisterButton()
+                .clickRegisterButton()
+                .clickRegisterButton();
+        loginPage
+                .waitForLoginButtonIsVisible()
+                .loginWithCreatedAccount()
+                .clickLoginButton();
+    }
+
+    @Test
+    @Description("Позитивный тест логина на странице восстановления пароля")
+    public void loginResetPasswordCorrectSuccess() {
+        registerPage
+                .openRegisterPage()
+                .fillRegisterForm()
+                .clickRegisterButton();
+        resetPasswordPage
+                .openResetPasswordPage()
+                .clickLoginButton();
+        loginPage
+                .waitForLoginButtonIsVisible()
                 .loginWithCreatedAccount()
                 .clickLoginButton();
     }
