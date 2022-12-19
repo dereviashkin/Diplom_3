@@ -3,22 +3,22 @@ package pageobject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import static helpers.ChecksHelper.*;
-import static helpers.SeleniumHelper.clickButton;
-import static helpers.SeleniumHelper.openPage;
+import static steps.ChecksSteps.*;
+import static steps.SeleniumSteps.clickButton;
+import static steps.SeleniumSteps.openPage;
 
 public class MainPage {
 
-    static final String mainPageUrl = "https://stellarburgers.nomoreparties.site";
+    private static final String mainPageUrl = "https://stellarburgers.nomoreparties.site";
 
-    static final By loginToAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
-    static final By personalAccountButton = By.xpath(".//p[text() = 'Личный Кабинет']");
-    static final By assembleBurgerHeader = By.xpath(".//h1[text() = 'Соберите бургер']");
-    static final By constructorButton = By.xpath(".//p[text() = 'Конструктор']");
-    static final By stellarBurgersButton = By.xpath(".//div[contains(@class, 'AppHeader_header__logo')]");
-    static final By bunsButton = By.xpath(".//span[text()='Булки']/parent::div");
-    static final By saucesButton = By.xpath(".//span[text()='Соусы']/parent::div");
-    static final By fillingsButton = By.xpath(".//span[text()='Начинки']/parent::div");
+    private static final By loginToAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
+    private static final By personalAccountButton = By.xpath(".//p[text() = 'Личный Кабинет']");
+    private static final By assembleBurgerHeader = By.xpath(".//h1[text() = 'Соберите бургер']");
+    private static final By constructorButton = By.xpath(".//p[text() = 'Конструктор']");
+    private static final By stellarBurgersButton = By.xpath(".//div[contains(@class, 'AppHeader_header__logo')]");
+    private static final By bunsButton = By.xpath(".//span[text()='Булки']/parent::div");
+    private static final By saucesButton = By.xpath(".//span[text()='Соусы']/parent::div");
+    private static final By fillingsButton = By.xpath(".//span[text()='Начинки']/parent::div");
 
     @Step("Открываем главную страницу")
     public MainPage openMainPage() {

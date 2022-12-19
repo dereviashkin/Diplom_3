@@ -1,13 +1,13 @@
-import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import pageobject.MainPage;
 
 public class ConstructorTest extends BaseTest {
 
-    MainPage mainPage = new MainPage();
+    private MainPage mainPage = new MainPage();
 
     @Test
-    @Description("Позитивный тест проверки переходов по разделам")
+    @DisplayName("Позитивный тест проверки переходов по разделам")
     public void ingredientsSectionsChangeSuccess() {
         mainPage
                 .openMainPage()

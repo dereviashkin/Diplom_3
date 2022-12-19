@@ -3,18 +3,18 @@ package pageobject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import static helpers.ChecksHelper.waitForElementToBeVisible;
-import static helpers.SeleniumHelper.*;
-import static helpers.UserHelper.getCurrentEmail;
-import static helpers.UserHelper.getCurrentPassword;
+import static steps.ChecksSteps.waitForElementToBeVisible;
+import static steps.SeleniumSteps.*;
+import static steps.UserSteps.getCurrentEmail;
+import static steps.UserSteps.getCurrentPassword;
 
 public class LoginPage {
 
-    static final String loginPageUrl = "https://stellarburgers.nomoreparties.site/login";
+    private static final String loginPageUrl = "https://stellarburgers.nomoreparties.site/login";
 
-    static final By loginButton = By.xpath(".//button[text() = 'Войти']");
-    static final By inputFieldEmail = By.xpath(".//label[text() = 'Email']/following-sibling::input");
-    static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
+    private static final By loginButton = By.xpath(".//button[text() = 'Войти']");
+    private static final By inputFieldEmail = By.xpath(".//label[text() = 'Email']/following-sibling::input");
+    private static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
 
     @Step("Ждем, что видна кнопка \"Войти\"")
     public LoginPage waitForLoginButtonIsVisible() {

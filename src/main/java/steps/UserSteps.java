@@ -1,10 +1,10 @@
-package helpers;
+package steps;
 
 import entities.User;
 
-import static helpers.GeneratorHelper.*;
+import static steps.GeneratorSteps.*;
 
-public class UserHelper {
+public class UserSteps {
 
     static User user;
 

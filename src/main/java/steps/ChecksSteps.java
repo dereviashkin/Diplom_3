@@ -1,4 +1,4 @@
-package helpers;
+package steps;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static drivermanager.DriverManager.getDriver;
 import static drivermanager.DriverManager.getDriverWait;
 
-public class ChecksHelper {
+public class ChecksSteps {
 
     public static void waitForElementToBeClickable(By locator) {
         getDriverWait().until(ExpectedConditions.elementToBeClickable(locator));

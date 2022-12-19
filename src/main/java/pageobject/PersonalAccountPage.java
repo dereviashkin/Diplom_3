@@ -3,15 +3,15 @@ package pageobject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import static helpers.ChecksHelper.waitForElementToBeClickable;
-import static helpers.SeleniumHelper.clickButton;
-import static helpers.SeleniumHelper.openPage;
+import static steps.ChecksSteps.waitForElementToBeClickable;
+import static steps.SeleniumSteps.clickButton;
+import static steps.SeleniumSteps.openPage;
 
 public class PersonalAccountPage {
 
-    static final String accountPageUrl = "https://stellarburgers.nomoreparties.site/account/profile";
+    private static final String accountPageUrl = "https://stellarburgers.nomoreparties.site/account/profile";
 
-    static final By logoutButton = By.xpath(".//button[text() = 'Выход']");
+    private static final By logoutButton = By.xpath(".//button[text() = 'Выход']");
 
     @Step("Открываем страницу профиля")
     public PersonalAccountPage openAccountPage() {

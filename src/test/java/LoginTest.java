@@ -1,4 +1,4 @@
-import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
@@ -7,13 +7,13 @@ import pageobject.ResetPasswordPage;
 
 public class LoginTest extends BaseTest {
 
-    MainPage mainPage = new MainPage();
-    RegisterPage registerPage = new RegisterPage();
-    LoginPage loginPage = new LoginPage();
-    ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
+    private MainPage mainPage = new MainPage();
+    private RegisterPage registerPage = new RegisterPage();
+    private LoginPage loginPage = new LoginPage();
+    private ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
     @Test
-    @Description("Позитивный тест логина с главной страницы через кнопку \"Войти в аккаунт\"")
+    @DisplayName("Позитивный тест логина с главной страницы через кнопку \"Войти в аккаунт\"")
     public void loginMainPageLoginButtonSuccess() {
         registerPage
                 .openRegisterPage()
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест логина с главной страницы через кнопку \"Личный кабинет\"")
+    @DisplayName("Позитивный тест логина с главной страницы через кнопку \"Личный кабинет\"")
     public void loginMainPagePersonalAccountButtonSuccess() {
         registerPage
                 .openRegisterPage()
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест логина после регистрации")
+    @DisplayName("Позитивный тест логина после регистрации")
     public void loginRegisterCorrectSuccess() {
         registerPage
                 .openRegisterPage()
@@ -57,7 +57,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест логина на странице восстановления пароля")
+    @DisplayName("Позитивный тест логина на странице восстановления пароля")
     public void loginResetPasswordCorrectSuccess() {
         registerPage
                 .openRegisterPage()

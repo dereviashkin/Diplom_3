@@ -1,11 +1,11 @@
-package helpers;
+package steps;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 
 import java.util.UUID;
 
-public class GeneratorHelper {
+public class GeneratorSteps {
 
     private static String name;
 

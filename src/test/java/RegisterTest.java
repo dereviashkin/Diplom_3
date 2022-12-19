@@ -1,15 +1,15 @@
-import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.RegisterPage;
 
 public class RegisterTest extends BaseTest {
 
-    RegisterPage registerPage = new RegisterPage();
-    LoginPage loginPage = new LoginPage();
+    private RegisterPage registerPage = new RegisterPage();
+    private LoginPage loginPage = new LoginPage();
 
     @Test
-    @Description("Позитивный тест регистрации нового пользователя")
+    @DisplayName("Позитивный тест регистрации нового пользователя")
     public void registerNewUserCorrectSuccess() {
         registerPage
                 .openRegisterPage()
@@ -20,7 +20,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    @Description("Негативный тест регистрации нового пользователя, пароль слишком короткий")
+    @DisplayName("Негативный тест регистрации нового пользователя, пароль слишком короткий")
     public void registerNewUserShortPasswordFail() {
         registerPage
                 .openRegisterPage()

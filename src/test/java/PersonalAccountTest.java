@@ -1,4 +1,4 @@
-import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
@@ -7,13 +7,13 @@ import pageobject.RegisterPage;
 
 public class PersonalAccountTest extends BaseTest {
 
-    MainPage mainPage = new MainPage();
-    RegisterPage registerPage = new RegisterPage();
-    LoginPage loginPage = new LoginPage();
+    private MainPage mainPage = new MainPage();
+    private RegisterPage registerPage = new RegisterPage();
+    private LoginPage loginPage = new LoginPage();
+    private PersonalAccountPage personalAccountPage = new PersonalAccountPage();
 
-    PersonalAccountPage personalAccountPage = new PersonalAccountPage();
     @Test
-    @Description("Позитивный тест перехода в личный кабинет")
+    @DisplayName("Позитивный тест перехода в личный кабинет")
     public void personalAccountProfileCorrectSuccess() {
         registerPage
                 .openRegisterPage()
@@ -32,7 +32,7 @@ public class PersonalAccountTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест выхода из своей учетной записи")
+    @DisplayName("Позитивный тест выхода из своей учетной записи")
     public void personalAccountLogoutCorrectSuccess() {
         registerPage
                 .openRegisterPage()
@@ -54,7 +54,7 @@ public class PersonalAccountTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест перехода на главную из личного кабинета по кнопке \"Конструктор\"")
+    @DisplayName("Позитивный тест перехода на главную из личного кабинета по кнопке \"Конструктор\"")
     public void personalAccountConstructorSuccess() {
         registerPage
                 .openRegisterPage()
@@ -79,7 +79,7 @@ public class PersonalAccountTest extends BaseTest {
     }
 
     @Test
-    @Description("Позитивный тест перехода на главную из личного кабинета по кнопке \"Stellar Burgers\"")
+    @DisplayName("Позитивный тест перехода на главную из личного кабинета по кнопке \"Stellar Burgers\"")
     public void personalAccountStellarBurgerSuccess() {
         registerPage
                 .openRegisterPage()

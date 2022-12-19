@@ -1,24 +1,24 @@
 package pageobject;
 
 import entities.User;
-import helpers.UserHelper;
+import steps.UserSteps;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import static helpers.ChecksHelper.waitForElementToBeVisible;
-import static helpers.GeneratorHelper.*;
-import static helpers.SeleniumHelper.*;
+import static steps.ChecksSteps.waitForElementToBeVisible;
+import static steps.GeneratorSteps.*;
+import static steps.SeleniumSteps.*;
 
 
 public class RegisterPage {
 
-    static final String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
+    private static final String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
 
-    static final By buttonRegister = By.xpath(".//button[text() = 'Зарегистрироваться']");
-    static final By inputFieldName = By.xpath(".//label[text() = 'Имя']/following-sibling::input");
-    static final By inputFieldEmail = By.xpath(".//label[text() = 'Email']/following-sibling::input");
-    static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
-    static final By messageIncorrectPassword = By.xpath(".//p[text() = 'Некорректный пароль']");
+    private static final By buttonRegister = By.xpath(".//button[text() = 'Зарегистрироваться']");
+    private static final By inputFieldName = By.xpath(".//label[text() = 'Имя']/following-sibling::input");
+    private static final By inputFieldEmail = By.xpath(".//label[text() = 'Email']/following-sibling::input");
+    private static final By inputFieldPassword = By.xpath(".//label[text() = 'Пароль']/following-sibling::input");
+    private static final By messageIncorrectPassword = By.xpath(".//p[text() = 'Некорректный пароль']");
 
     @Step("Открываем страницу регистрации")
     public RegisterPage openRegisterPage() {
@@ -34,7 +34,7 @@ public class RegisterPage {
 
     @Step("Заполняем поля для регистрации нового пользователя")
     public RegisterPage fillRegisterForm() {
-        User user = new UserHelper().getRandomUser();
+        User user = new UserSteps().getRandomUser();
         sendKeysToInputField(user.getName(), inputFieldName);
         sendKeysToInputField(user.getEmail(), inputFieldEmail);
         sendKeysToInputField(user.getPassword(), inputFieldPassword);

@@ -1,10 +1,10 @@
-package helpers;
+package steps;
 
 import org.openqa.selenium.By;
 
 import static drivermanager.DriverManager.getDriver;
 
-public class SeleniumHelper {
+public class SeleniumSteps {
 
     public static void openPage(String page) {
         getDriver().get(page);
